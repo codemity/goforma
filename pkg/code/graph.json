@@ -473,7 +473,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 515,
+        "Offset": 611,
         "Line": 21,
         "Column": 2
       },
@@ -648,18 +648,36 @@
           "IsExported": false,
           "Tags": null,
           "Doc": ""
+        },
+        {
+          "Name": "excludeVersion",
+          "Type": {
+            "Label": "bool",
+            "Links": [
+              {
+                "Name": "bool",
+                "Underlying": "bool",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": false,
+          "Tags": null,
+          "Doc": ""
         }
       ],
       "Methods": [
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 517,
+            "Offset": 613,
             "Line": 23,
             "Column": 1
           },
           "End": {
-            "Offset": 1160,
+            "Offset": 1278,
             "Line": 43,
             "Column": 2
           },
@@ -747,12 +765,12 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 1218,
+            "Offset": 1336,
             "Line": 46,
             "Column": 1
           },
           "End": {
-            "Offset": 1822,
+            "Offset": 1940,
             "Line": 69,
             "Column": 2
           },
@@ -832,13 +850,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 1882,
+            "Offset": 2000,
             "Line": 72,
             "Column": 1
           },
           "End": {
-            "Offset": 3032,
-            "Line": 124,
+            "Offset": 3187,
+            "Line": 125,
             "Column": 2
           },
           "Name": "build",
@@ -880,13 +898,84 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 3112,
-            "Line": 127,
+            "Offset": 3256,
+            "Line": 128,
             "Column": 1
           },
           "End": {
-            "Offset": 3298,
-            "Line": 132,
+            "Offset": 3414,
+            "Line": 134,
+            "Column": 2
+          },
+          "Name": "moduleVersion",
+          "Signature": {
+            "Label": "(pkg *packages.Package) (string)",
+            "Alt": "(*packages.Package) (string)",
+            "Arguments": [
+              {
+                "Name": "pkg",
+                "Type": {
+                  "Label": "*packages.Package",
+                  "Links": [
+                    {
+                      "Name": "Package",
+                      "Underlying": "struct{ID string; Name string; PkgPath string; Dir string; Errors []golang.org/x/tools/go/packages.Error; TypeErrors []go/types.Error; GoFiles []string; CompiledGoFiles []string; OtherFiles []string; EmbedFiles []string; EmbedPatterns []string; IgnoredFiles []string; ExportFile string; Target string; Imports map[string]*golang.org/x/tools/go/packages.Package; Module *golang.org/x/tools/go/packages.Module; Types *go/types.Package \"json:\\\"-\\\"\"; Fset *go/token.FileSet \"json:\\\"-\\\"\"; IllTyped bool \"json:\\\"-\\\"\"; Syntax []*go/ast.File \"json:\\\"-\\\"\"; TypesInfo *go/types.Info \"json:\\\"-\\\"\"; TypesSizes go/types.Sizes \"json:\\\"-\\\"\"; ForTest string; depsErrors []*golang.org/x/tools/internal/packagesinternal.PackageError; exportDataError error}",
+                      "PackageName": "packages",
+                      "PackagePath": "golang.org/x/tools/go/packages",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Package",
+                "Underlying": "struct{ID string; Name string; PkgPath string; Dir string; Errors []golang.org/x/tools/go/packages.Error; TypeErrors []go/types.Error; GoFiles []string; CompiledGoFiles []string; OtherFiles []string; EmbedFiles []string; EmbedPatterns []string; IgnoredFiles []string; ExportFile string; Target string; Imports map[string]*golang.org/x/tools/go/packages.Package; Module *golang.org/x/tools/go/packages.Module; Types *go/types.Package \"json:\\\"-\\\"\"; Fset *go/token.FileSet \"json:\\\"-\\\"\"; IllTyped bool \"json:\\\"-\\\"\"; Syntax []*go/ast.File \"json:\\\"-\\\"\"; TypesInfo *go/types.Info \"json:\\\"-\\\"\"; TypesSizes go/types.Sizes \"json:\\\"-\\\"\"; ForTest string; depsErrors []*golang.org/x/tools/internal/packagesinternal.PackageError; exportDataError error}",
+                "PackageName": "packages",
+                "PackagePath": "golang.org/x/tools/go/packages",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": "Helper function to get the module version of a package, if any.\n"
+        },
+        {
+          "FilePath": "pkg/code/imports/parser.go",
+          "Start": {
+            "Offset": 3494,
+            "Line": 137,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 3680,
+            "Line": 142,
             "Column": 2
           },
           "Name": "isLocal",
@@ -951,13 +1040,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 3351,
-            "Line": 135,
+            "Offset": 3733,
+            "Line": 145,
             "Column": 1
           },
           "End": {
-            "Offset": 3532,
-            "Line": 147,
+            "Offset": 3914,
+            "Line": 157,
             "Column": 2
           },
           "Name": "isOwned",
@@ -1022,13 +1111,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 3585,
-            "Line": 150,
+            "Offset": 3967,
+            "Line": 160,
             "Column": 1
           },
           "End": {
-            "Offset": 3935,
-            "Line": 170,
+            "Offset": 4317,
+            "Line": 180,
             "Column": 2
           },
           "Name": "isExclude",
@@ -1093,13 +1182,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 4020,
-            "Line": 173,
+            "Offset": 4402,
+            "Line": 183,
             "Column": 1
           },
           "End": {
-            "Offset": 4124,
-            "Line": 175,
+            "Offset": 4506,
+            "Line": 185,
             "Column": 2
           },
           "Name": "isExternal",
@@ -1164,13 +1253,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 4197,
-            "Line": 178,
+            "Offset": 4579,
+            "Line": 188,
             "Column": 1
           },
           "End": {
-            "Offset": 4290,
-            "Line": 180,
+            "Offset": 4672,
+            "Line": 190,
             "Column": 2
           },
           "Name": "isStandard",
@@ -1235,13 +1324,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 4365,
-            "Line": 183,
+            "Offset": 4747,
+            "Line": 193,
             "Column": 1
           },
           "End": {
-            "Offset": 4499,
-            "Line": 187,
+            "Offset": 4881,
+            "Line": 197,
             "Column": 2
           },
           "Name": "isInternal",
@@ -1306,13 +1395,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 4572,
-            "Line": 190,
+            "Offset": 4954,
+            "Line": 200,
             "Column": 1
           },
           "End": {
-            "Offset": 4698,
-            "Line": 194,
+            "Offset": 5080,
+            "Line": 204,
             "Column": 2
           },
           "Name": "isVendor",
@@ -1377,13 +1466,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 4758,
-            "Line": 197,
+            "Offset": 5140,
+            "Line": 207,
             "Column": 1
           },
           "End": {
-            "Offset": 4993,
-            "Line": 205,
+            "Offset": 5375,
+            "Line": 215,
             "Column": 2
           },
           "Name": "sanitiseVendorPath",
@@ -1441,13 +1530,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 5088,
-            "Line": 208,
+            "Offset": 5470,
+            "Line": 218,
             "Column": 1
           },
           "End": {
-            "Offset": 5538,
-            "Line": 221,
+            "Offset": 5920,
+            "Line": 231,
             "Column": 2
           },
           "Name": "sanitisePath",
@@ -1505,13 +1594,13 @@
         {
           "FilePath": "pkg/code/imports/parser.go",
           "Start": {
-            "Offset": 5591,
-            "Line": 224,
+            "Offset": 5973,
+            "Line": 234,
             "Column": 1
           },
           "End": {
-            "Offset": 5885,
-            "Line": 238,
+            "Offset": 6267,
+            "Line": 248,
             "Column": 2
           },
           "Name": "dedupeSliceOfString",
@@ -1590,7 +1679,7 @@
         "Links": [
           {
             "Name": "DefaultParser",
-            "Underlying": "struct{rootPath string; depth int; packagesMap map[string]*golang.org/x/tools/go/packages.Package; owned []string; excludePaths []string; excludeStandard bool; excludeVendor bool; excludeInternal bool}",
+            "Underlying": "struct{rootPath string; depth int; packagesMap map[string]*golang.org/x/tools/go/packages.Package; owned []string; excludePaths []string; excludeStandard bool; excludeVendor bool; excludeInternal bool; excludeVersion bool}",
             "PackageName": "imports",
             "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
             "PackageAlias": ""
@@ -1615,7 +1704,7 @@
         "Column": 1
       },
       "End": {
-        "Offset": 372,
+        "Offset": 381,
         "Line": 13,
         "Column": 2
       },
@@ -1678,6 +1767,24 @@
         },
         {
           "Name": "Label",
+          "Type": {
+            "Label": "string",
+            "Links": [
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsExported": true,
+          "Tags": null,
+          "Doc": ""
+        },
+        {
+          "Name": "Version",
           "Type": {
             "Label": "string",
             "Links": [
@@ -1828,12 +1935,12 @@
     {
       "FilePath": "pkg/code/imports/type.go",
       "Start": {
-        "Offset": 435,
+        "Offset": 444,
         "Line": 16,
         "Column": 1
       },
       "End": {
-        "Offset": 493,
+        "Offset": 502,
         "Line": 19,
         "Column": 2
       },
@@ -1883,7 +1990,7 @@
             "Links": [
               {
                 "Name": "Package",
-                "Underlying": "struct{Name string; Path string; Label string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
+                "Underlying": "struct{Name string; Path string; Label string; Version string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
                 "PackageName": "imports",
                 "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
                 "PackageAlias": ""
@@ -9028,8 +9135,8 @@
             "Column": 1
           },
           "End": {
-            "Offset": 901,
-            "Line": 38,
+            "Offset": 928,
+            "Line": 39,
             "Column": 2
           },
           "Name": "Generate",
@@ -9116,16 +9223,16 @@
         {
           "FilePath": "pkg/code/gen/dep.go",
           "Start": {
-            "Offset": 966,
-            "Line": 41,
+            "Offset": 1029,
+            "Line": 42,
             "Column": 1
           },
           "End": {
-            "Offset": 1316,
-            "Line": 64,
+            "Offset": 1187,
+            "Line": 48,
             "Column": 2
           },
-          "Name": "fillColour",
+          "Name": "label",
           "Signature": {
             "Label": "(pkg *imports.Package) (string)",
             "Alt": "(*imports.Package) (string)",
@@ -9137,7 +9244,7 @@
                   "Links": [
                     {
                       "Name": "Package",
-                      "Underlying": "struct{Name string; Path string; Label string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
+                      "Underlying": "struct{Name string; Path string; Label string; Version string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
                       "PackageName": "imports",
                       "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
                       "PackageAlias": ""
@@ -9166,7 +9273,78 @@
             "Links": [
               {
                 "Name": "Package",
-                "Underlying": "struct{Name string; Path string; Label string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
+                "Underlying": "struct{Name string; Path string; Label string; Version string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
+                "PackageName": "imports",
+                "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
+                "PackageAlias": ""
+              },
+              {
+                "Name": "string",
+                "Underlying": "string",
+                "PackageName": "",
+                "PackagePath": "",
+                "PackageAlias": ""
+              }
+            ]
+          },
+          "IsPointerReceiver": true,
+          "IsExported": false,
+          "Doc": "Helper function to build the node label, appending the version (separated by \"@\") when present.\n"
+        },
+        {
+          "FilePath": "pkg/code/gen/dep.go",
+          "Start": {
+            "Offset": 1252,
+            "Line": 51,
+            "Column": 1
+          },
+          "End": {
+            "Offset": 1602,
+            "Line": 74,
+            "Column": 2
+          },
+          "Name": "fillColour",
+          "Signature": {
+            "Label": "(pkg *imports.Package) (string)",
+            "Alt": "(*imports.Package) (string)",
+            "Arguments": [
+              {
+                "Name": "pkg",
+                "Type": {
+                  "Label": "*imports.Package",
+                  "Links": [
+                    {
+                      "Name": "Package",
+                      "Underlying": "struct{Name string; Path string; Label string; Version string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
+                      "PackageName": "imports",
+                      "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Returns": [
+              {
+                "Name": "",
+                "Type": {
+                  "Label": "string",
+                  "Links": [
+                    {
+                      "Name": "string",
+                      "Underlying": "string",
+                      "PackageName": "",
+                      "PackagePath": "",
+                      "PackageAlias": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Name": "Package",
+                "Underlying": "struct{Name string; Path string; Label string; Version string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
                 "PackageName": "imports",
                 "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
                 "PackageAlias": ""
@@ -9187,13 +9365,13 @@
         {
           "FilePath": "pkg/code/gen/dep.go",
           "Start": {
-            "Offset": 1381,
-            "Line": 67,
+            "Offset": 1667,
+            "Line": 77,
             "Column": 1
           },
           "End": {
-            "Offset": 1732,
-            "Line": 90,
+            "Offset": 2018,
+            "Line": 100,
             "Column": 2
           },
           "Name": "strokeColour",
@@ -9208,7 +9386,7 @@
                   "Links": [
                     {
                       "Name": "Package",
-                      "Underlying": "struct{Name string; Path string; Label string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
+                      "Underlying": "struct{Name string; Path string; Label string; Version string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
                       "PackageName": "imports",
                       "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
                       "PackageAlias": ""
@@ -9237,7 +9415,7 @@
             "Links": [
               {
                 "Name": "Package",
-                "Underlying": "struct{Name string; Path string; Label string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
+                "Underlying": "struct{Name string; Path string; Label string; Version string; IsLocal bool; IsOwned bool; IsExternal bool; IsStandard bool; IsInternal bool; IsVendor bool; DepPaths []string}",
                 "PackageName": "imports",
                 "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
                 "PackageAlias": ""
@@ -12329,8 +12507,8 @@
         "Column": 1
       },
       "End": {
-        "Offset": 469,
-        "Line": 23,
+        "Offset": 495,
+        "Line": 24,
         "Column": 2
       },
       "PackageName": "imports",
@@ -12364,7 +12542,7 @@
               "Links": [
                 {
                   "Name": "DefaultParser",
-                  "Underlying": "struct{rootPath string; depth int; packagesMap map[string]*golang.org/x/tools/go/packages.Package; owned []string; excludePaths []string; excludeStandard bool; excludeVendor bool; excludeInternal bool}",
+                  "Underlying": "struct{rootPath string; depth int; packagesMap map[string]*golang.org/x/tools/go/packages.Package; owned []string; excludePaths []string; excludeStandard bool; excludeVendor bool; excludeInternal bool; excludeVersion bool}",
                   "PackageName": "imports",
                   "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
                   "PackageAlias": ""
@@ -12383,7 +12561,7 @@
           },
           {
             "Name": "DefaultParser",
-            "Underlying": "struct{rootPath string; depth int; packagesMap map[string]*golang.org/x/tools/go/packages.Package; owned []string; excludePaths []string; excludeStandard bool; excludeVendor bool; excludeInternal bool}",
+            "Underlying": "struct{rootPath string; depth int; packagesMap map[string]*golang.org/x/tools/go/packages.Package; owned []string; excludePaths []string; excludeStandard bool; excludeVendor bool; excludeInternal bool; excludeVersion bool}",
             "PackageName": "imports",
             "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
             "PackageAlias": ""
@@ -12904,6 +13082,79 @@
       "Params": null,
       "IsExported": true,
       "Doc": "WithExcludeInternal configuration option.\n"
+    },
+    {
+      "FilePath": "pkg/code/imports/func.go",
+      "Start": {
+        "Offset": 1126,
+        "Line": 53,
+        "Column": 1
+      },
+      "End": {
+        "Offset": 1243,
+        "Line": 57,
+        "Column": 2
+      },
+      "PackageName": "imports",
+      "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
+      "Name": "WithExcludeVersion",
+      "Signature": {
+        "Label": "(exclude bool) (Option)",
+        "Alt": "(bool) (Option)",
+        "Arguments": [
+          {
+            "Name": "exclude",
+            "Type": {
+              "Label": "bool",
+              "Links": [
+                {
+                  "Name": "bool",
+                  "Underlying": "bool",
+                  "PackageName": "",
+                  "PackagePath": "",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Returns": [
+          {
+            "Name": "",
+            "Type": {
+              "Label": "Option",
+              "Links": [
+                {
+                  "Name": "Option",
+                  "Underlying": "func(p *github.com/codemityio/goforma/pkg/code/imports.DefaultParser)",
+                  "PackageName": "imports",
+                  "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
+                  "PackageAlias": ""
+                }
+              ]
+            }
+          }
+        ],
+        "Links": [
+          {
+            "Name": "bool",
+            "Underlying": "bool",
+            "PackageName": "",
+            "PackagePath": "",
+            "PackageAlias": ""
+          },
+          {
+            "Name": "Option",
+            "Underlying": "func(p *github.com/codemityio/goforma/pkg/code/imports.DefaultParser)",
+            "PackageName": "imports",
+            "PackagePath": "github.com/codemityio/goforma/pkg/code/imports",
+            "PackageAlias": ""
+          }
+        ]
+      },
+      "Params": null,
+      "IsExported": true,
+      "Doc": "WithExcludeVersion configuration option.\n"
     },
     {
       "FilePath": "pkg/code/parser/factory.go",

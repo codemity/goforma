@@ -13,6 +13,7 @@ func New(options ...Option) *DefaultParser {
 		excludeStandard: false,
 		excludeVendor:   false,
 		excludeInternal: false,
+		excludeVersion:  false,
 	}
 
 	for _, option := range options {

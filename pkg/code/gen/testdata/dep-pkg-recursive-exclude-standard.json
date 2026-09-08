@@ -31,7 +31,8 @@
         "github.com/danielgtaylor/huma/v2/negotiation",
         "github.com/danielgtaylor/huma/v2/validation",
         "github.com/danielgtaylor/huma/v2/yaml"
-      ]
+      ],
+      "Version": "v2.37.2"
     },
     {
       "Name": "humachi",
@@ -119,7 +120,8 @@
       "IsStandard": false,
       "IsInternal": false,
       "IsVendor": false,
-      "DepPaths": []
+      "DepPaths": [],
+      "Version": "v5.2.5"
     },
     {
       "Name": "envconfig",
