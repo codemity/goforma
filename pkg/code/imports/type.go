@@ -5,7 +5,7 @@ type Option func(p *DefaultParser)
 
 // Package item structure.
 type Package struct {
-	Name, Path, Label string
+	Name, Path, Label, Version string
 	// IsLocal indicates the package is part of the scanned project.
 	IsLocal, IsOwned                             bool
 	IsExternal, IsStandard, IsInternal, IsVendor bool

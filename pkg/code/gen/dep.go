@@ -21,6 +21,7 @@ func (g *DefaultDepGraphGenerator) Generate(packages *imports.Packages) (string,
 	tmpl, err := template.New("graphviz").Funcs(template.FuncMap{
 		"fillColour":   g.fillColour,
 		"strokeColour": g.strokeColour,
+		"label":        g.label,
 	}).Parse(depDotTpl)
 	if err != nil {
 		return "", fmt.Errorf("%w: %w", ErrTemplateParse, err)
@@ -35,6 +36,15 @@ func (g *DefaultDepGraphGenerator) Generate(packages *imports.Packages) (string,
 	}
 
 	return buf.String(), nil
+}
+
+// Helper function to build the node label, appending the version (separated by "@") when present.
+func (g *DefaultDepGraphGenerator) label(pkg *imports.Package) string {
+	if pkg.Version == "" {
+		return pkg.Label
+	}
+
+	return pkg.Label + "@" + pkg.Version
 }
 
 // Helper function to decide what colour of the box to return.

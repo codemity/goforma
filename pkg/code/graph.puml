@@ -17,6 +17,7 @@ package "github.com/codemityio/goforma/pkg/code/doc" as github_com_codemityio_go
 package "github.com/codemityio/goforma/pkg/code/gen" as github_com_codemityio_goforma_pkg_code_gen {
     class "<b><font color=#1c1c1c>DefaultDepGraphGenerator</font></b>" as github_com_codemityio_goforma_pkg_code_gen_DefaultDepGraphGenerator << (S, #b5558d) >> {
         + Generate <font color=#1f38b5>(packages *imports.Packages) (string, error)</font>
+        - label <font color=#1f38b5>(pkg *imports.Package) (string)</font>
         - fillColour <font color=#1f38b5>(pkg *imports.Package) (string)</font>
         - strokeColour <font color=#1f38b5>(pkg *imports.Package) (string)</font>
     }
@@ -121,9 +122,11 @@ package "github.com/codemityio/goforma/pkg/code/imports" as github_com_codemityi
         - excludeStandard <font color=#1f38b5>bool</font>
         - excludeVendor <font color=#1f38b5>bool</font>
         - excludeInternal <font color=#1f38b5>bool</font>
+        - excludeVersion <font color=#1f38b5>bool</font>
         + Parse <font color=#1f38b5>(path string) (*Packages, error)</font>
         - collectPackages <font color=#1f38b5>(pkgs []*packages.Package, currentDepth int, maxDepth int)</font>
         - build <font color=#1f38b5>() (*Packages)</font>
+        - moduleVersion <font color=#1f38b5>(pkg *packages.Package) (string)</font>
         - isLocal <font color=#1f38b5>(path string) (bool)</font>
         - isOwned <font color=#1f38b5>(path string) (bool)</font>
         - isExclude <font color=#1f38b5>(path string) (bool)</font>
@@ -141,6 +144,7 @@ package "github.com/codemityio/goforma/pkg/code/imports" as github_com_codemityi
         + Name <font color=#1f38b5>string</font>
         + Path <font color=#1f38b5>string</font>
         + Label <font color=#1f38b5>string</font>
+        + Version <font color=#1f38b5>string</font>
         + IsLocal <font color=#1f38b5>bool</font>
         + IsOwned <font color=#1f38b5>bool</font>
         + IsExternal <font color=#1f38b5>bool</font>
@@ -164,6 +168,7 @@ package "github.com/codemityio/goforma/pkg/code/imports" as github_com_codemityi
     class "<b><font color=#1c1c1c>WithExcludeStandard</font></b><font color=#1f38b5>(exclude bool) (Option)</font>" as github_com_codemityio_goforma_pkg_code_imports_WithExcludeStandard << (F, #dbcb8f) >> {}
     class "<b><font color=#1c1c1c>WithExcludeVendor</font></b><font color=#1f38b5>(exclude bool) (Option)</font>" as github_com_codemityio_goforma_pkg_code_imports_WithExcludeVendor << (F, #dbcb8f) >> {}
     class "<b><font color=#1c1c1c>WithExcludeInternal</font></b><font color=#1f38b5>(exclude bool) (Option)</font>" as github_com_codemityio_goforma_pkg_code_imports_WithExcludeInternal << (F, #dbcb8f) >> {}
+    class "<b><font color=#1c1c1c>WithExcludeVersion</font></b><font color=#1f38b5>(exclude bool) (Option)</font>" as github_com_codemityio_goforma_pkg_code_imports_WithExcludeVersion << (F, #dbcb8f) >> {}
 }
 package "github.com/codemityio/goforma/pkg/code/parser" as github_com_codemityio_goforma_pkg_code_parser {
     class "<b><font color=#1c1c1c>Parser</font></b>" as github_com_codemityio_goforma_pkg_code_parser_Parser << (I, #e4f58e) >> {
@@ -386,6 +391,9 @@ package "github.com/codemityio/goforma/pkg/code/imports" as github_com_codemityi
         class "Package" as golang_org_x_tools_go_packages_Package << (S, #b5558d) >> {}
     }
     class "error" as _error << (I, #e4f58e) >> {}
+    package "golang.org/x/tools/go/packages" as .golang_org_x_tools_go_packages {
+        class "Package" as golang_org_x_tools_go_packages_Package << (S, #b5558d) >> {}
+    }
     package "golang.org/x/tools/go/packages" as .golang_org_x_tools_go_packages {
         class "Package" as golang_org_x_tools_go_packages_Package << (S, #b5558d) >> {}
     }
@@ -683,6 +691,7 @@ package "github.com/codemityio/goforma/pkg/code/imports" as github_com_codemityi
     github_com_codemityio_goforma_pkg_code_imports_WithExcludeStandard ....up....> github_com_codemityio_goforma_pkg_code_imports_Option
     github_com_codemityio_goforma_pkg_code_imports_WithExcludeVendor ....up....> github_com_codemityio_goforma_pkg_code_imports_Option
     github_com_codemityio_goforma_pkg_code_imports_WithExcludeInternal ....up....> github_com_codemityio_goforma_pkg_code_imports_Option
+    github_com_codemityio_goforma_pkg_code_imports_WithExcludeVersion ....up....> github_com_codemityio_goforma_pkg_code_imports_Option
 }
 package "github.com/codemityio/goforma/pkg/code/parser" as github_com_codemityio_goforma_pkg_code_parser {
     github_com_codemityio_goforma_pkg_code_parser_Parser #...up...> _interface

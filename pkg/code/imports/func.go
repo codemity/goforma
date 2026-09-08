@@ -48,3 +48,10 @@ func WithExcludeInternal(exclude bool) Option {
 		dcp.excludeInternal = exclude
 	}
 }
+
+// WithExcludeVersion configuration option.
+func WithExcludeVersion(exclude bool) Option {
+	return func(dcp *DefaultParser) {
+		dcp.excludeVersion = exclude
+	}
+}

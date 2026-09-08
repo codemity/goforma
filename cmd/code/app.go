@@ -74,6 +74,11 @@ var App = cli.Command{ //nolint:exhaustruct_v5,gochecknoglobals
 					Usage:    "Exclude internal packages",
 					Required: false,
 				},
+				&cli.BoolFlag{ //nolint:exhaustruct_v5
+					Name:     "exclude-version",
+					Usage:    "Exclude package version information",
+					Required: false,
+				},
 			},
 			Action: dep,
 		},

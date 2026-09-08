@@ -83,6 +83,7 @@ OPTIONS:
    --exclude-standard                             Exclude standard library packages (default: false)
    --exclude-vendor                               Exclude vendor packages (default: false)
    --exclude-internal                             Exclude internal packages (default: false)
+   --exclude-version                              Exclude package version information (default: false)
    --help, -h                                     show help
 ```
 

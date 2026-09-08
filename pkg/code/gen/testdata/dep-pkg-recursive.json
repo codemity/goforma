@@ -1275,7 +1275,8 @@
         "time",
         "unicode/utf8",
         "unsafe"
-      ]
+      ],
+      "Version": "v2.37.2"
     },
     {
       "Name": "humachi",
@@ -1396,7 +1397,8 @@
         "strconv",
         "strings",
         "sync"
-      ]
+      ],
+      "Version": "v5.2.5"
     },
     {
       "Name": "envconfig",

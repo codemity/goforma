@@ -114,6 +114,33 @@ func TestStrokeColour(t *testing.T) {
 	}
 }
 
+func TestLabel(t *testing.T) {
+	tests := []struct {
+		name     string
+		pkg      *imports.Package
+		expected string
+	}{
+		{
+			name:     "without-version",
+			pkg:      &imports.Package{Label: "github.com/example/pkg"},
+			expected: "github.com/example/pkg",
+		},
+		{
+			name:     "with-version",
+			pkg:      &imports.Package{Label: "github.com/example/pkg", Version: "v1.2.3"},
+			expected: "github.com/example/pkg@v1.2.3",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			g := &DefaultDepGraphGenerator{}
+
+			assert.Equal(t, tt.expected, g.label(tt.pkg))
+		})
+	}
+}
+
 func TestFillColour(t *testing.T) {
 	tests := []struct {
 		name     string

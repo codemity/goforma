@@ -21,6 +21,7 @@ func dep(ctx *cli.Context) error {
 	excludeStandard := ctx.Bool("exclude-standard")
 	excludeVendor := ctx.Bool("exclude-vendor")
 	excludeInternal := ctx.Bool("exclude-internal")
+	excludeVersion := ctx.Bool("exclude-version")
 
 	parser := imports.New(
 		imports.WithRootPath(wd),
@@ -30,6 +31,7 @@ func dep(ctx *cli.Context) error {
 		imports.WithExcludeStandard(excludeStandard),
 		imports.WithExcludeVendor(excludeVendor),
 		imports.WithExcludeInternal(excludeInternal),
+		imports.WithExcludeVersion(excludeVersion),
 	)
 
 	output, err := parser.Parse(path)

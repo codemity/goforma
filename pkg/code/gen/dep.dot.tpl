@@ -9,7 +9,7 @@ digraph DepGraph {
     subgraph deps {
     {{- range .List -}}
         {{ $path := .Path }}
-        "{{ $path }}" [label="{{ .Label }}", color="{{ strokeColour . }}", fillcolor="{{ fillColour . }}", penwidth=1]
+        "{{ $path }}" [label="{{ label . }}", color="{{ strokeColour . }}", fillcolor="{{ fillColour . }}", penwidth=1]
             {{- range .DepPaths }}
               "{{ $path }}" -> "{{.}}"
             {{- end }}

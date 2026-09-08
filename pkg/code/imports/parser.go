@@ -12,17 +12,17 @@ import (
 )
 
 type DefaultParser struct {
-	rootPath                                        string
-	depth                                           int
-	packagesMap                                     map[string]*packages.Package
-	owned                                           []string
-	excludePaths                                    []string
-	excludeStandard, excludeVendor, excludeInternal bool
+	rootPath                                                        string
+	depth                                                           int
+	packagesMap                                                     map[string]*packages.Package
+	owned                                                           []string
+	excludePaths                                                    []string
+	excludeStandard, excludeVendor, excludeInternal, excludeVersion bool
 }
 
 func (p *DefaultParser) Parse(path string) (*Packages, error) {
 	cfg := &packages.Config{ //nolint:exhaustruct_v5 // not required to be exhaustive...
-		Mode: packages.NeedImports | packages.NeedDeps | packages.NeedName | packages.NeedFiles,
+		Mode: packages.NeedImports | packages.NeedDeps | packages.NeedName | packages.NeedFiles | packages.NeedModule,
 		Dir:  p.rootPath,
 		Fset: token.NewFileSet(),
 	}
@@ -88,6 +88,7 @@ func (p *DefaultParser) build() *Packages {
 			Name:       pkg.Name,
 			Path:       pkgPath,
 			Label:      p.sanitisePath(pkg.PkgPath),
+			Version:    p.moduleVersion(pkg),
 			IsLocal:    p.isLocal(filepath.Dir(pkg.GoFiles[0])),
 			IsOwned:    p.isOwned(pkg.PkgPath),
 			IsExternal: p.isExternal(pkg.PkgPath),
@@ -121,6 +122,15 @@ func (p *DefaultParser) build() *Packages {
 	})
 
 	return &list
+}
+
+// Helper function to get the module version of a package, if any.
+func (p *DefaultParser) moduleVersion(pkg *packages.Package) string {
+	if p.excludeVersion || pkg.Module == nil {
+		return ""
+	}
+
+	return pkg.Module.Version
 }
 
 // Helper function to check if a package is from the current project library.
